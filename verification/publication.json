@@ -1,0 +1,15 @@
+{
+  "verifiedAt": "2026-09-24T10:37:10.434Z",
+  "site": {
+    "url": "https://architect-2-hardik-bhatt.aihardikbhatt.chatgpt.site",
+    "status": "succeeded",
+    "access": "public"
+  },
+  "github": {
+    "url": "https://github.com/adminthelinkai/lyzr-architect-2-tpm",
+    "visibility": "public",
+    "anonymousMetadataHttpStatus": 200,
+    "anonymousReadmeHttpStatus": 200
+  },
+  "sampleAppPublishing": "Simulated inside the prototype"
+}

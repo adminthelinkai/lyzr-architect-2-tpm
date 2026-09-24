@@ -4,6 +4,10 @@ A Technical Product Manager assignment prototype for Lyzr. **Sitewise**, a ficti
 
 The distinctive interaction is **Change impact**: review a request across the interface, agent behavior, and connection requirements, apply it to shared project state, and undo it. Guided and technical views use the same project revision.
 
+**[Open the live prototype](https://architect-2-hardik-bhatt.aihardikbhatt.chatgpt.site)** · **[Public GitHub repository](https://github.com/adminthelinkai/lyzr-architect-2-tpm)**
+
+![Architect workspace and cross-layer change review](verification/02-change-impact-desktop.png)
+
 ## Run locally
 
 Requires Node.js 20 or newer. The application has no runtime dependencies.
