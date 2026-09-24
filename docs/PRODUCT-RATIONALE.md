@@ -2,9 +2,9 @@
 
 ## Thesis and personas
 
-Help the person responsible for a business outcome and the person responsible for its implementation make changes to the **same app** without losing the reason behind those changes. A quality lead needs to understand the next action and who remains accountable. A developer needs to inspect contracts, configuration, dependencies and release evidence.
+Help the person responsible for a business outcome and the person responsible for its implementation make changes to the **same app** without losing the reason behind those changes. A business owner needs to understand the next action and who remains accountable. A developer needs to inspect contracts, configuration, dependencies and release evidence.
 
-Assumed situation: an EPC project receives quality exceptions with incomplete evidence. The quality lead and developer need to agree how uncertain findings reach a qualified person. This is a concrete demonstration scenario, not a reported customer problem. Validate it before treating it as a market opportunity.
+Architect 2.0 serves users building agentic applications across domains. Support, sales, research and hiring are independent examples. A blank custom project demonstrates user-defined structure and agents; EPC quality remains optional. These examples are hypotheses for demonstration, not evidence of market demand.
 
 ## Selected differentiation
 
@@ -28,11 +28,11 @@ The workspace uses a crisp white working surface, deep green navigation accents,
 
 Depth went to both complete journeys, impact/undo, meaningful failure recovery and state consistency. Backend work was deliberately deferred, following the brief's order. Zero runtime dependencies make the prototype portable and easy to inspect. Native HTML forms and dialogs provide a small, maintainable foundation; a component framework would be preferable as the product grows.
 
-The vendor template, role-based collaboration, and Studio library are breadth demonstrations with explicit limits. Billing and full current-account parity remain gaps. They were not padded with fake successful transactions.
+Multiple templates provide distinct workflows, data and previews. Role-based collaboration and Studio reuse remain simulations with explicit limits. Billing and full current-account parity remain gaps. They were not padded with fake successful transactions.
 
 ## Next validation
 
-- Interview 5 quality/project owners and 5 engineers working together; ask for a recent exception and its actual handoffs. Do not lead with AI.
+- Interview paired business owners and engineers across support, sales and research; ask about the last application or workflow they built and its actual handoffs. Do not lead with AI.
 - Observe them changing a routing rule in their current tool and in this prototype. Measure completion, wrong assumptions, assistance needed, and explanation accuracy.
 - Test whether the impact review helps users correctly identify all affected layers; compare with a plain chat confirmation.
 - Instrument time to first reviewed preview, first recovered failure, release-check abandonment and repeat collaborative edits. Proposed metrics, not existing results.

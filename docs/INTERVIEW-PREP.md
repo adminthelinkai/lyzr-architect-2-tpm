@@ -2,7 +2,7 @@
 
 ## Explain the architecture in one minute
 
-This is a static browser application with a pure domain state module and a UI module. Projects, chat, configuration, tests, GitHub simulation and release snapshots live in one project object. Transitions clone state, validate preconditions, mutate the clone, and return it. The UI persists that result to localStorage and rerenders the current route. File views are derived from the same state, so they cannot silently diverge from preview settings.
+This is a static browser application with a pure domain state module and a UI module. Each project owns its blueprint, editable structure, agent graph, records, chat, configuration, tests, GitHub simulation and release snapshots. The blueprints module separates example-domain assumptions from platform behavior. Unknown prompts start blank; prompt classification is a bounded rule set, not AI inference. Transitions clone state, validate preconditions, mutate the clone, and return it. The UI persists that result to localStorage and rerenders the current route. File views are derived from the same state, so they cannot silently diverge from preview settings.
 
 The website uses plain HTML/CSS/JavaScript with no runtime dependencies. Node provides the local server and tests. Happy DOM tests the actual forms; isolated Chrome verifies rendered flows and captures desktop/mobile screenshots. This stack prioritizes portability and inspectability for a UI-led assignment. A larger product would benefit from typed state, component boundaries, a proper editor, and a server.
 
@@ -41,7 +41,7 @@ Do not say this proves market demand. A compelling interaction is a hypothesis u
 
 ## Discovery questions
 
-- Tell me about the last exception whose owner or supporting evidence was unclear. What happened next?
+- Tell me about the last workflow or application you built whose owner or supporting evidence was unclear. What happened next?
 - What systems did people consult, and which record was authoritative?
 - Which decisions can be drafted automatically, and who can approve them?
 - What is worse: an unnecessary escalation or an incorrectly accepted exception? How often does each happen?

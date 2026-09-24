@@ -5,16 +5,17 @@ Status definitions: **Local** = working behavior on this device; **Simulated** =
 | Requirement / user problem | Screen or journey | Implementation | Verification |
 | --- | --- | --- | --- |
 | Authentication and low-friction entry | Home, demo identity | Local demo identity; real auth deferred | Journey A entry; reset |
-| Homepage, recent projects, templates, discovery | Overview, Discover | Local projects/search; two template briefs; fixed discovery recommendation | Browser route/overflow sweep; DOM navigation |
+| Homepage, recent projects, templates, discovery | Overview, Discover | Local projects/search; six starting points; input-based discovery suggestions | Browser route/overflow sweep; DOM navigation |
 | Prompt to plan; clarify requirements | Outcome & plan | Local editable outcome, audience, owner and threshold | A: approve plan; state validation |
 | Chat, changes, assumptions | Build, Plan | Local bounded edit parser; unsupported requests explain limits | Impact, stale proposal, numeric validation tests |
 | Visible generation, cancel/retry | Build | Timed simulated build with preserved plan | Unit cancel/retry; real browser build |
-| Interactive app preview | Build → Preview | Local sample inbox, routing badges, response window, human assignment | Browser preview changes, rollback and reload |
-| Agent roles, instructions, framework, model | Agents | Local configuration; inference simulated | Agent config state test; DOM config change |
+| Configurable app structure | App structure / Build | Local heading, labels, fields, stages and three layouts | Platform state tests and custom-app Chrome journey |
+| Interactive app preview | Build → Preview | Local inbox/board/briefs, distinct records, custom fields, record creation/stages/search, human assignment | Browser preview changes, rollback and reload |
+| Agent roles, instructions, framework, model | Agents | Add/edit/remove roles and contracts; inference simulated | Agent config state test; DOM config change |
 | Inputs/outputs/tools/knowledge | Agents, Files, Data | Derived contracts and local source metadata | File-map assertions; route sweep |
 | Existing Studio agent reuse | Studio dialog | Sample reference attach; actual account reuse deferred | Local transition; manual coverage remains narrower |
 | Existing-project import | Overview → Import | Validated JSON manifest; repository cloning simulated | B: invalid input preserved, valid import, missing model |
-| Any-framework agent workflow | Import, Agents | Lyzr/LangGraph/CrewAI/custom metadata; executable adapters deferred | Validation and config state tests |
+| Any-framework agent workflow | Import, Agents | Lyzr/LangGraph/CrewAI/AutoGen/custom metadata; executable adapters deferred | Validation and config state tests |
 | Integration setup and recovery | Data & connections | Missing/denied/connected simulations | A: denied Teams → reconnect; B: missing model |
 | Database explorer and schema | Data | Local sample rows and schema; cloud DB deferred | Route/overflow sweep; source inspection |
 | Memorable change interaction | Build → Change impact | Local interface/agent/connection review, apply, diff, undo | A and B; immutable and stale proposal tests |

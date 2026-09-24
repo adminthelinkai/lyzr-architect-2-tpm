@@ -9,3 +9,7 @@
 - Reviewed captured desktop and mobile images. Increased small-text sizes and kept desktop change review/composer within reach.
 - Wrote research, rationale, evidence matrix, demo script, application answers, interview guide and setup instructions.
 - Publishing and final evidence update recorded in HANDOFF.md.
+
+## General-purpose platform correction
+
+User review identified that the EPC example had incorrectly become a platform-wide default. Replaced that coupling with independent support, sales, research, hiring, optional quality, and blank custom blueprints. Added editable app structure, agent CRUD, three preview layouts, records and workflow movement. Existing saved projects migrate without loss. Updated demo and submission positioning to the platform requirement.

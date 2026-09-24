@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Reviewable Architect 2.0 product prototype with deterministic EPC workflows",
+  "description": "General-purpose Architect 2.0 agentic app-builder assignment prototype",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
     "start": "node scripts/serve.mjs",
     "dev": "node scripts/serve.mjs",
-    "check": "node --check dist/app.js && node --check dist/state.js && node --check scripts/serve.mjs",
+    "check": "node --check dist/app.js && node --check dist/state.js && node --check dist/blueprints.js && node --check scripts/serve.mjs",
     "test": "node --test tests/*.test.mjs",
     "build": "node scripts/check-build.mjs"
   },

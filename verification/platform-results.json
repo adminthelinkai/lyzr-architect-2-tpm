@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-24T11:12:54.763Z",
+  "browser": "Isolated local Chrome",
+  "verified": [
+    "Sales prompt creates sales agents/data and board",
+    "Research prompt creates briefs and distinct records",
+    "Unmatched prompt starts a blank custom app",
+    "Custom labels, fields, stages and layout affect preview",
+    "Add agent and inspect exported contracts",
+    "Add record with custom values and move stage",
+    "Reload preserves custom app",
+    "Multiple independent projects",
+    "Mobile route overflow"
+  ],
+  "pageErrors": [],
+  "horizontalOverflow": []
+}

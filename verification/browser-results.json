@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-24T10:31:44.595Z",
+  "date": "2026-09-24T11:11:08.507Z",
   "browser": "Isolated local Chrome (headless fallback; in-app browser failed to start)",
   "journeys": [
     "A: plan → build → impact → missing/denied connections → test → failed release → retry → second release → rollback → reload",

@@ -4,15 +4,15 @@
 - **Public repository:** https://github.com/adminthelinkai/lyzr-architect-2-tpm
 - **Project directory:** D:\Link AI\Lyzer-Tech PM\architect-2
 
-The hosting service reported **succeeded** on 24 September 2026. Site access is public. The repository metadata and README were retrieved without authentication with HTTP 200; visibility is public. The hosted URL is the Architect prototype, not a separately published Sitewise sample app.
+The hosting service reported **succeeded** on 24 September 2026. Site access is public. The repository metadata and README were retrieved without authentication with HTTP 200; visibility is public. The hosted URL is the Architect prototype, not a separately published generated application.
 
 ## What was built
 
-A shared business/developer workspace with outcome planning, agent contracts, interactive EPC preview, cross-layer Change impact and undo, manifest import, connection recovery, scenario testing, simulated GitHub conflicts, release checks, version snapshots and rollback. Local persistence and reset are functional.
+A shared business/developer workspace with outcome planning, agent contracts, independent support, sales, research, hiring, optional EPC and blank custom projects; configurable inbox/board/brief previews; editable fields/stages and agent roles, cross-layer Change impact and undo, manifest import, connection recovery, scenario testing, simulated GitHub conflicts, release checks, version snapshots and rollback. Local persistence and reset are functional.
 
 ## Verification
 
-Seven state/DOM tests passed. Both full journeys also passed in isolated Chrome, including failures and recovery. No uncaught page errors or document-level horizontal overflow across the main routes at 390px. Desktop/mobile screenshots were inspected. Targeted keyboard, cancel/retry and 200% text checks passed after corrections. See VERIFICATION.md for limits; this is not a comprehensive accessibility certification.
+Eleven state/DOM tests passed, including domain independence and preserving existing saved projects. Both full journeys and a new sales/research/custom-app journey passed in isolated Chrome, including failures, recovery, adding agents, custom records and stage changes. No uncaught page errors or document-level horizontal overflow across the main routes at 390px. Desktop/mobile screenshots were inspected. Targeted keyboard, cancel/retry and 200% text checks passed after corrections. See VERIFICATION.md for limits; this is not a comprehensive accessibility certification.
 
 ## Submission packet
 

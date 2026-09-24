@@ -1,7 +1,18 @@
 {
-  "name": "Sitewise · imported",
+  "name": "Research workspace · imported",
+  "blueprintId": "research",
   "framework": "LangGraph",
-  "files": ["package.json", "src/app.tsx", "agents/graph.py", "requirements.txt"],
-  "dependencies": ["react", "langgraph"],
-  "requiredEnv": ["MODEL_API_KEY"]
+  "files": [
+    "package.json",
+    "src/app.tsx",
+    "agents/graph.py",
+    "requirements.txt"
+  ],
+  "dependencies": [
+    "react",
+    "langgraph"
+  ],
+  "requiredEnv": [
+    "MODEL_API_KEY"
+  ]
 }
