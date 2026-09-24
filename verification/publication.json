@@ -1,15 +1,17 @@
 {
-  "verifiedAt": "2026-09-24T10:37:10.434Z",
+  "verifiedAt": "2026-09-24T11:15:23.484808+00:00",
   "site": {
     "url": "https://architect-2-hardik-bhatt.aihardikbhatt.chatgpt.site",
     "status": "succeeded",
-    "access": "public"
+    "access": "public",
+    "version": 3,
+    "deploymentId": "appgdep_6ab50631b2e48191b451e524e5666c8c",
+    "sourceCommit": "63f61c98645a4fcb1b9880ac50693e7b4cd37ed3"
   },
   "github": {
     "url": "https://github.com/adminthelinkai/lyzr-architect-2-tpm",
-    "visibility": "public",
-    "anonymousMetadataHttpStatus": 200,
-    "anonymousReadmeHttpStatus": 200
+    "sourceCommit": "63f61c98645a4fcb1b9880ac50693e7b4cd37ed3",
+    "pushConfirmed": true
   },
-  "sampleAppPublishing": "Simulated inside the prototype"
+  "sampleAppPublishing": "Simulated inside the platform"
 }
