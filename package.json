@@ -1,0 +1,21 @@
+{
+  "name": "architect-2-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Reviewable Architect 2.0 product prototype with deterministic EPC workflows",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs",
+    "check": "node --check dist/app.js && node --check dist/state.js && node --check scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/check-build.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "happy-dom": "^20.14.5"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Sitewise · imported",
+  "framework": "LangGraph",
+  "files": ["package.json", "src/app.tsx", "agents/graph.py", "requirements.txt"],
+  "dependencies": ["react", "langgraph"],
+  "requiredEnv": ["MODEL_API_KEY"]
+}

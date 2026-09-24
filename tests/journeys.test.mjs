@@ -1,0 +1,37 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {Window} from 'happy-dom';
+import {sampleImport} from '../dist/state.js';
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+test('DOM journeys: reviewer, plan, build, edit, recovery, release, import and reset',async()=>{
+ const w=new Window({url:'http://localhost:4173/'});w.document.body.innerHTML='<div id="app"></div><div id="notifications"></div><dialog id="modal"></dialog>';
+ for(const key of ['window','document','location','localStorage','FormData','navigator'])Object.defineProperty(globalThis,key,{value:key==='window'?w:w[key],configurable:true});
+ const modal=w.document.querySelector('#modal');modal.showModal=()=>{modal.open=true;};modal.close=()=>{modal.open=false;};
+ await import('../dist/app.js?dom-test');
+ const q=s=>{const el=w.document.querySelector(s);assert(el,'Missing UI control '+s);return el;};
+ const click=s=>q(s).click();
+ const fill=(s,value)=>{q(s).value=value;q(s).dispatchEvent(new w.Event('input',{bubbles:true}));};
+ const submit=s=>q(s).dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));
+ const nav=async hash=>{w.location.hash=hash;w.dispatchEvent(new w.Event('hashchange'));await wait(1);};
+ const saved=()=>JSON.parse(w.localStorage.getItem('architect2.workspace.v1'));
+ click('[data-action="demo"]');assert(q('#plan-form'));
+ fill('#plan-outcome','Route site exceptions to an accountable quality engineer.');
+ click('[data-action="mode"][data-value="technical"]');assert.equal(q('#plan-outcome').value,'Route site exceptions to an accountable quality engineer.');
+ submit('#plan-form');assert(q('#agent-form'));click('[data-action="build-start"]');await wait(3000);assert(q('.sample-app'));
+ fill('#change-request','Add Teams alerts');submit('#chat-form');assert(q('.impact-card'));click('[data-action="apply"]');assert.match(q('.sample-app').textContent,/Team alerts on/);
+ click('[data-action="undo"]');assert.match(q('.sample-app').textContent,/Draft actions only/);
+ fill('#change-request','Add Teams alerts');submit('#chat-form');click('[data-action="apply"]');
+ await nav('test');submit('#test-form');assert.match(q('#main').textContent,/Knowledge connection is missing/);
+ await nav('data');click('[data-action="connect"][data-key="knowledge"]');click('[data-action="grant"]');click('[data-action="connect"][data-key="teams"]');click('[data-action="deny"]');assert.match(q('#main').textContent,/Permission denied/);click('[data-action="connect"][data-key="teams"]');click('[data-action="grant"]');
+ await nav('test');submit('#test-form');assert.match(q('#main').textContent,/Passed/);await nav('deploy');fill('#release-scenario','fail');submit('#deploy-form');await wait(1400);assert.match(q('#main').textContent,/Release paused/);click('[data-action="retry-deploy"]');await wait(1400);assert.match(q('#main').textContent,/Your demo release is ready/);
+ await nav('build');fill('#change-request','Set response to 12 hours');submit('#chat-form');click('[data-action="apply"]');assert.match(q('.sample-stats').textContent,/12/);await nav('test');submit('#test-form');await nav('deploy');fill('#release-scenario','healthy');submit('#deploy-form');await wait(1400);click('[data-action="rollback"]');click('[data-action="confirm-rollback"]');assert.equal(saved().projects[0].sla,24);
+ await nav('home');click('[data-action="import"]');fill('#import-json','invalid');submit('#import-form');assert.match(q('#import-form .form-error').textContent,/valid JSON/);assert.equal(q('#import-json').value,'invalid');click('[data-action="load-sample"]');submit('#import-form');assert.equal(saved().mode,'technical');assert.match(q('#main').textContent,/MODEL_API_KEY/);
+ click('[data-action="work-tab"][data-value="code"]');assert(q('#config-form'));const config=JSON.parse(q('#config-json').value);config.reviewBelow=90;fill('#config-json',JSON.stringify(config));submit('#config-form');click('[data-action="apply"]');assert.equal(saved().projects[0].threshold,90);
+ await nav('github');click('[data-action="github-connect"]');click('[data-action="authorize-github"]');click('[data-action="conflict"]');assert(q('[data-action="sync"]').disabled);click('[data-action="resolve-remote"]');click('[data-action="sync"]');assert.equal(saved().projects[0].sla,48);
+ await nav('data');for(const key of ['knowledge','model']){click('[data-action="connect"][data-key="'+key+'"]');click('[data-action="grant"]');}
+ await nav('test');fill('#scenario','timeout');submit('#test-form');assert.match(q('#main').textContent,/timed out/);fill('#scenario','suite');submit('#test-form');await nav('deploy');submit('#deploy-form');await wait(1400);assert.match(q('#main').textContent,/Your demo release is ready/);
+ const persisted=saved();assert.equal(persisted.projects.length,2);assert.equal(persisted.projects[0].framework,sampleImport.framework);
+ await nav('settings');click('[data-action="reset"]');click('[data-action="confirm-reset"]');assert.equal(saved().projects.length,0);assert(q('#new-project'));
+ console.log('DOM journeys verified. This is a simulated DOM, not rendered browser QA.');
+ await w.happyDOM.close();
+});

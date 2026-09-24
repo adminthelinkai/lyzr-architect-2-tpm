@@ -1,0 +1,10 @@
+{
+  "keyboardSkip": true,
+  "dialogEscape": true,
+  "buildCancelRetry": true,
+  "text200Percent": {
+    "client": 1280,
+    "scroll": 1280
+  },
+  "limitations": "Targeted smoke checks, not a WCAG certification or screen-reader audit."
+}
